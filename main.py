@@ -14,11 +14,7 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 def index():
     db_session.global_init("blogs.db")
     db_sess = db_session.create_session()
-
-    # Получаем все работы из базы данных
     jobs = db_sess.query(Jobs).all()
-
-    # Отображаем шаблон jobs.html, передавая в него данные о работах
     return render_template('jobs.html', jobs=jobs)
 
 
