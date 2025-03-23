@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+    <title>{{ title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #343a40;
+        }
+        table {
+            margin-top: 20px;
+            margin-bottom: 40px;
+            table-layout: fixed;
+            width: 100%;
+        }
+        th, td {
+            word-wrap: break-word;
+        }
+        th {
+            background-color: rgb(221, 221, 221); /* Цвет заголовков */
+            color: #343a40;
+        }
+        td {
+            background-color: rgb(238, 238, 255); /* Цвет ячеек */
+        }
+        .is-finished {
+            background-color: rgb(255, 238, 255); /* Цвет для статуса завершения */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <h1>Миссия Колонизация Марса</h1>
+            <a class="navbar-brand" href="#">Mars One</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
